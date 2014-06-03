@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>[vistex] Visual Cortex Demo</title> 
+<style>
+body {
+	background-color:#ddd;
+}
+.video {
+	float:left;
+	position:relative;
+	width: 400px;
+	height: 300px;
+	background-color:#fff;
+	border: 1px solid #aaa;
+}
+.video .camera,
+.video .overlay {
+	position:absolute;
+	top:0;
+}
+</style>
+</head>
+<body>
+
+<div id="camera" class="video"></div>
+
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="lib/kernel.js"></script>
+<script type="text/javascript" src="src/kernel-extension.js"></script>
+<script type="text/javascript" src="src/main-hub.js"></script>
+<script type="text/javascript" src="src/camera.js"></script>
+<script type="text/javascript">
+
+	Kernel.register([
+		{id: 'camera', type: 'Camera'}
+	]);
+
+	// Start the modules after the DOM is ready
+	$(document).ready(function() {
+		Kernel.startAll();
+	});
+
+</script>
+</body>
+</html>
