@@ -20,21 +20,33 @@ body {
 	position:absolute;
 	top:0;
 }
+.clearboth {
+	clear: both;
+}
 </style>
 </head>
 <body>
 
-<div id="camera" class="video"></div>
+	<div>
+		<div id="camera" class="video"></div>
+		<div id="motion" class="video"></div>
+		<div id="light" class="video"></div>
+		<div class="clearboth"></div>
+	</div>
 
 <script type="text/javascript" src="lib/jquery.js"></script>
 <script type="text/javascript" src="lib/kernel.js"></script>
 <script type="text/javascript" src="src/kernel-extension.js"></script>
 <script type="text/javascript" src="src/main-hub.js"></script>
 <script type="text/javascript" src="src/camera.js"></script>
+<script type="text/javascript" src="src/motion.js"></script>
+<script type="text/javascript" src="src/light.js"></script>
 <script type="text/javascript">
 
 	Kernel.register([
-		{id: 'camera', type: 'Camera'}
+		{id: 'camera-1', type: 'Camera'},
+		{id: 'motion-1', type: 'Motion'},
+		{id: 'light-1', type: 'Light'}
 	]);
 
 	// Start the modules after the DOM is ready
